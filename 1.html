@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='jquery.js'></script>
+</head>
+<body>
+	<form action="#">
+		<input type="text" name="user" id="" value='123'>
+		<input type="password" name="pwd" id="" value='123'>
+		<select name="" id="" multiple>
+			<option value="1" selected>1</option>
+			<option value="2" selected>2</option>
+			<option value="3" selected>3</option>
+		</select>
+		<textarea name="" id="" cols="30" rows="10"></textarea>
+		<textarea name="" id="" cols="30" rows="10"></textarea>
+		<button></button>
+		<input type="button" value="">
+	</form>
+	<script type="text/javascript">
+		// alert($('input').size());
+		// console.log($('input[name=pwd][type=password]'));
+		// alert($(':input').size());//所有表单元素都会被选中
+		// alert($(':input[name=user]').size());
+		// alert($(':button').size()); //所有button(包括input:button)
+		// alert($(":hidden").size()); //显示Input:hidden 和html、head。。。等等 不显示的元素
+		// alert($("form :hidden").size());一般这样写
+		// alert($(':enabled').size());
+		alert($(':selected').size());
+	</script>
+</body>
+</html>
