@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	div{
+		width:200px;
+		height: 200px;
+		background-color: blue;
+	}
+	span{
+		width:100px;
+		height: 100px;
+		background-color: green;
+		display: block;
+	}
+	</style>
+	<script type="text/javascript" src='jquery.js'></script>
+</head>
+<body>
+	<input type="button" value="按钮">
+	<div>
+		<span></span>
+	</div>
+	<script type="text/javascript">
+	// $('input').bind('click',function(e){
+	// 	alert(e);
+	// })
+
+	// $('input').bind('click',function(e){
+	// 	alert(e.type); //click
+	// })
+	// $('input').bind('click',function(e){
+	// 	alert(e.target); //获取的是触发事件的DOM
+	// })
+	
+	// $('input').bind('click',function(e){
+	// 	alert(e.currentTarget);//获取的是监听事件的DOM
+	// })
+
+	//区别
+	// $("div").bind('click',function(e){
+	// 	alert(e.target);//点了谁就获取谁
+	// 	alert(e.currentTarget);//谁绑定 就获取谁，
+	// })
+	// $('div').bind('mouseover',function(e){
+	// 	alert(e.relatedTarget);//获取的是临近的DOM(mouseover从哪个DOM移过来的，或者mouseout移出到了哪个DOM)
+	// })
+
+	// $('div').bind('mouseover',function(e){
+	// 	alert(this == e.currentTarget);//this==e.currentTarget
+	// })
+	// $('div').bind('click',{a:1,b:2},function(e){
+	// 	// alert(e.data.a);//this==e.currentTarget
+	// 	return 123;
+	// });
+	// $('div').bind('click',{a:1,b:2},function(e){
+	// 	alert(e.result);//获取上一个相同事件的返回值
+	// })
+	// $('div').bind('click',{a:1,b:2},function(e){
+	// 	alert(e.timeStamp);//获取事件的时间戳
+	// })
+
+	// $('div').bind('click',function(e){
+	// 	alert(e.which);//鼠标键：左中右 123
+	// })
+	$('div').bind('click',function(e){
+		alert(e.ctrlKey);//判断是否按下了alt键==ctrlKey==shiftKey
+	})
+	</script>
+</body>
+</html>
