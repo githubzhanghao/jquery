@@ -20,11 +20,17 @@
 	$(document).bind('click',function(){
 		alert("document");
 	});
-	$("div").bind('click',function(){
+	$("div").bind('click',function(e){
+		
 		alert("div");
+		e.stopPropagation();//阻止事件冒泡
+
 	});
-	$("button").bind('click',function(){
+	$("button").bind('click',function(e){
+		
 		alert("button");
+		e.stopPropagation();
+		
 	});
 	</script>
 </body>
