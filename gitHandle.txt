@@ -1,0 +1,16 @@
+git操作
+
+初始化		git init 
+版本回退	git reset --hard HEAD^      :加一个^为上个版本，多的可以直接HEAD~100，上百个版本   
+查看状态    git status
+添加		git add file
+提交		git commit -m file    
+查看当前修改git diff 
+查看和版本库区别	git diff head -- file
+查看文件内容	cat file
+撤销到上一次commit或add的状态  git checkout -- file
+把暂存区的修改撤销掉,重新放回工作区	git reset HEAD file
+删除文件	rm file
+删除版本库中的文件  git rm -- file
+生成远程ssh-key文件 ssh-keygen -t rsa -C "youremail@example.com"
+
