@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='jquery.js'></script>
+	<style type="text/css">
+	div{
+		width:200px;
+		height: 200px;
+		background-color: blue;
+		position: absolute;
+	}
+	div:nth-of-type(2){
+		position: absolute;
+		top:240px;
+	}
+	</style>
+</head>
+<body>
+	<button>运动</button>
+	<button>停止</button>
+	<button>查找运动的</button>
+	<div></div>
+	<div></div>
+	<script type="text/javascript">
+	// alert($("button:contains(运动)").size());
+	// $("button:eq(0)").click(function(){
+	// 	$('div').animate({width:'300px'}).animate({height:'300px'});
+	// })
+	// $('button:eq(0)').on('click',function(){
+	// 	$('div').slideToggle(500,function(){
+	// 		$(this).slideToggle(500,arguments.callee);
+	// 	});
+	// // });
+	// $('button:eq(1)').click(function(){
+	// 	// $('div').stop();
+	// 	$('div').stop(false,false);
+	// })
+
+	// $('button:eq(2)').click(function(){
+	// 	$('div:animated').stop();
+	// })
+	
+	// $.fx.interval = 0;
+	// $('div').slideToggle(1000,function(){
+	// 	$(this).slideToggle(1000,arguments.callee);
+	// })
+
+	// $('button').click(function(){
+	// 	$.fx.off = true;
+	// })
+	
+	$('button').click(function(){
+		$("div:eq(0)").animate({left:'1000px'},2000,'swing')
+		$("div:eq(1)").animate({left:'1000px'},2000,'linear')
+	})
+	
+	</script>
+</body>
+</html>

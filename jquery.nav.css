@@ -1,0 +1,19 @@
+.nav{
+	list-style:none;
+	margin:0;
+	padding:0;
+	color:#fff;
+	width:100px;
+	display: none;
+}
+.nav>li{
+	text-align:center;
+	line-height: 30px;
+	height: 30px;
+	background-color: #111;
+	/*visibility:hidden;*/
+}
+.nav>li:hover{
+	color:orange;
+	background-color: #222;
+}
