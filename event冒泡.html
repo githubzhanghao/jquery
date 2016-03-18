@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='jquery.js'></script>
+</head>
+<body>
+	<div>
+		<a href="http://www.baidu.com">链接</a>
+	</div>
+	<form action="www.baidu.com">
+		<input type="submit" value='提交'>
+	</form>
+	<script type="text/javascript">
+	$(function(){
+		$('div').eq(0).get(0).style.cssText = 'width:100px;height:100px;background-color:#ccc';
+
+		$('div').bind('click.a',function(){
+			alert("第一个click");
+		});
+		// $('div').bind('click',function(){
+		// 	alert('第二个click');
+		// });
+
+		// $('div').unbind('click.a');
+		// $('div').trigger('click.a');
+
+
+
+		// $('div').bind('click',{'a':'c'},function(e,x,y,z){
+		// 	alert('div');
+		// 	console.log(e.data);
+		// 	console.log(x+y+z);
+		// });
+		// $('div').trigger('click',[1,2,3]);
+		//【trigger简写】
+		// $('form').trigger('submit');
+		// $('form').triggerHandler('submit');
+		// $('div').click().click().trigger('click');
+		
+
+		// $('a').bind('click',['a','b'],function(e){
+		// 	alert('a');
+		// 	e.preventDefault();
+		// 	// e.preventDefault();
+		// 	// e.stopPropagation();
+		// 	// return false;
+		// 	// alert(e.isDefaultPrevented());
+		// 	// alert(e.isPropagationStopped());
+		// 	e.stopImmediatePropagation(); //
+		// 	//取消冒泡，并阻止后续同样事件的执行
+		// 	alert(e.isImmediatePropagationStopped());
+		// });
+		// $('a').click(function(){
+		// 	alert('aaa');
+		// })
+		// $('div').bind('click',['a','c'],function(e){
+		// 	alert('div');
+		// });
+		// $(document).bind('click',function(){
+		// 	alert('document');
+		// })
+
+
+	})
+	</script>
+</body>
+</html>

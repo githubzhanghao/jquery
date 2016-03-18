@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='jquery.js'></script>
+</head>
+<body>
+	<div id="box">
+		<button>按钮</button>
+	</div>
+	<div></div>
+	<script type="text/javascript">
+	// $('button').click(function(){
+	// 	$(this).clone(true).appendTo($('#box'));
+	// })
+	// $('#box').delegate('button','click',function(){
+	// 	$(this).clone().appendTo($('#box'));
+	// 	// console.log(this);//button js对象
+	// });
+	// $('#box').undelegate('button','click');//对应起来就删除对应的
+	// $('#box').undelegate();//不写参数，清除所有。
+	// $("#box").on('button','click',function(){
+	// 	$(this).clone().appendTo($("#box"));
+	// })
+	
+	//【on】
+	// $('button').on({
+	// 	mouseover:function(){
+	// 		console.log(this);
+	// 		alert("移入");
+	// 	},
+	// 	mouseout:function(){
+	// 		console.log(this);
+	// 		alert('移出');
+	// 	},
+	// })
+	// $('button').on('mouseover mouseout',function(){
+	// 	console.log(this);
+	// 	alert("aaa");
+	// })
+	// $('button').on('click',function(){
+	// 	alert('button');
+	// 	return false;//阻止冒泡和默认行为
+	// });
+
+	//如果事件处理函数中不需要任何语句，则可以简写成：
+	// $('button').on('click',false);
+
+	// $('div').on('click',function(){
+	// 	alert('div');
+	// });
+	// $("div").on('mouseout mouseover','button',function(e){
+	// 	// console.log(e.target);//button
+	// 	// console.log(this);//button
+	// 	// console.log(e.currentTarget);//button
+	// 	// console.log(e.relatedTarget);
+	// 	// $(this).clone().appendTo($('div').eq(0));
+	// })
+	$("div").one('mouseout mouseover click dblclick','button',function(e){
+		// console.log(e.target);//button
+		// console.log(this);//button
+		// console.log(e.currentTarget);//button
+		// console.log(e.relatedTarget);
+		$(this).clone().appendTo($('div').eq(0));
+	})
+	</script>
+</body>
+</html>

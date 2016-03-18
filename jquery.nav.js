@@ -14,12 +14,15 @@
 	//局部性的定义:全局的问题 在于调用一次之后对所有的.nav都有效
 	$.fn.extend({
 		'nav':function(color){
-			this.find('.nav').css({
+			this.css({
+				'cursor':'pointer'
+			}).find('.nav').css({
 				'list-style':'none',
 				'margin':0,
 				'padding':0,
 				'display':'none',
-				'background-color':'#444'
+				'background-color':'#444',
+				'cursor':'pointer'
 				/*
 				.nav>li{
 					text-align:center;
@@ -34,7 +37,7 @@
 				*/
 			}).find('li').hover(function(){
 				// console.log(this);
-				$(this).css({'color':color});
+				$(this).css({'color':color?color:'orange'});
 			},function(){
 				$(this).css({'color':'#fff'});
 			});

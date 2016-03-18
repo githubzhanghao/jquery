@@ -1,0 +1,48 @@
+【笔记】
+
+【triggerHandler和trigger的区别】
+1.触发行为不同：triggerHandler不会触发元素的默认行为；用form表单的submit()测试
+2.执行次数不同：trigger执行所有匹配到元素的事件,triggerHandler只执行第一个
+3.返回值不同：trigger返回当前触发元素的jQuery对象,triggerHandler返回当前事件执行的返回值，如果没有则返回undefined;
+4.冒泡：trigger会冒泡,triggerHandler不会冒泡
+
+【事件委托】
+live已被淘汰，不支持淘汰.
+1.永远只会绑定一次事件,它绑定的是document
+(liv绑定在doucment上,而触发事件其实是冒泡到document上，并且点击document的时候,需要验证event.type和event.target才能触发)
+2.可以动态绑定事件
+【delegate()和bind()的使用规则】
+1.在DOM中存在很多元素绑定相同事件时；
+2.在DOM中尚不存在即将生成的元素绑定事件时,用delegate()；
+$(parentEl),delegate('selector','event:click',fn);
+********************************
+小结：
+事件绑定/解绑   bind()/unbind()
+事件委托/解除	live()/die() 1.7之后淘汰   delegate()/undelegate()   
+				on()/off() 注释 看下面...(和delegate()前两个参数相反)
+*********************************
+【on】替代了 bind()&&live()&&delegate()
+【off】替代了 unbind()&&die()&&undelegate()
+$('button').on('click',function(){
+	alert('button');
+	return false;//阻止冒泡和默认行为
+});
+//如果事件处理函数中不需要任何语句，则可以简写成：
+$('button').on('click',false);
+(
+	单一的阻止冒泡或者默认行为的话：
+	e.stopPropagation();
+	e.preventDefault();
+)
+
+
+
+*****************************
+$("div").one('mouseout mouseover click dblclick','button',function(e){
+		// console.log(e.target);//button
+		// console.log(this);//button
+		// console.log(e.currentTarget);//button
+		// console.log(e.relatedTarget);
+		$(this).clone().appendTo($('div').eq(0));
+})
+每个事件都会被触发一次
