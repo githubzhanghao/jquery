@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='jquery.js'></script>
+	<style type="text/css" id='style'>
+		.a{
+			background-color: #146;
+			width:200px;
+			height: 200px;
+			transition:all 2s ease-out 0s;
+		}
+	</style>
+	<script type="text/javascript" src='jquery_wap_button.js'></script>
+</head>
+<body>
+
+	<div class="a">a</div>
+	<div class="a">a</div>
+	<div class="a">54654</div>
+
+	<button style='width:200px;height:200px;'>按钮效果</button>
+	
+	<script type="text/javascript">
+	$('button').wapButton('orange');
+	$('.a').wapButton('red');
+	// $('.a').wrap($('<div>'));//每个包裹每个(方法参数的元素包括调用它的元素)
+	// $('.a').unwrap(); //去除父标签
+	// $('.a').wrapAll($('<div>'));//用一个包裹住多个(方法参数的元素包括调用它的元素)
+
+	// $('.a').wrapInner($('<b>'));//方法参数中的selector包裹每个调用它的元素
+	// $('body').append($("<div class='b'>"));
+	// $('#style').html($('#style').html()+'.b{background-color:blue;}');
+	//  $('body').append($("<div class='b'>").html(123));
+	</script>
+</body>
+</html>
